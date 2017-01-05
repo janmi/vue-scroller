@@ -2,26 +2,72 @@
 
 > A Vue.js project
 
-## Build Setup
+## Install
 
 ``` bash
 # install dependencies
-npm install
+npm install anima-vue-scroller --save
 
-# serve with hot reload at localhost:8080
-npm run dev
+```JavaScript
+require ('dist/main.css');
 
-# build for production with minification
-npm run build
+// ES6 mudule
+import Scroller from 'vue-scroller';
 
-# run unit tests
-npm run unit
+# Usage
 
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
+```HTML
+<span @click="show('scroller')"></span>
+<scroller @confirm="confirm" ref="scroller" @claer="claer" @change="changeValue" :scroll="scrollData"></scroller>
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+```JavaScript
+export default {
+  name: 'app',
+  components: {
+    Scroller
+  },
+  data () {
+    return {
+      scrollData: [{
+        defaultValue: 1,
+        data: [{
+          name: '男',
+          value: 0
+        }, {
+          name: '女',
+          value: 1
+        }, {
+          name: '不限',
+          value: 2
+        }]
+      }, {
+        defaultValue: 2,
+        data: [{
+          name: '男',
+          value: 0
+        }, {
+          name: '女',
+          value: 1
+        }, {
+          name: '不限',
+          value: 2
+        }]
+      }]
+    }
+  },
+  methods: {
+    changeValue (value) {
+      console.log(value)
+    },
+    confirm (values) {
+      console.log(values)
+    },
+    claer () {
+      console.log('已关闭')
+    },
+    show (name) {
+      this.$refs[name].open()
+    }
+  }
+}

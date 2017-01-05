@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Vue scroller picke anima-vue-scroller",
   "author": "janmi <627943558@qq.com>",
-  "private": true,
+  "private": false,
   "main": "dist/main.js",
   "files": [
     "dist/main.js",
