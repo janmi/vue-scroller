@@ -1,4 +1,4 @@
-# vue-scroller
+# anima-vue-scroller
 
 > A Vue.js project
 
