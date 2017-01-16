@@ -9,10 +9,10 @@
 npm install anima-vue-scroller --save
 
 ```JavaScript
-require ('dist/main.css');
+require ('dist/app.css');
 
 // ES6 mudule
-import Scroller from 'vue-scroller';
+import Scroller from 'anima-vue-scroller';
 
 # Usage
 

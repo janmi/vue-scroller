@@ -9,6 +9,6 @@ test
 .gitignore
 .npmignore
 gulpfile.js
-index.html
+./index.html
 node_modules
 npm-debug.log

@@ -74,7 +74,7 @@
         <span @click="confirm('confirm')" class="u-scroller-confirm">确认</span>
       </div>
       <div class="u-scroller-bd">
-        <scroll-slot @changeSolt="getData"  v-for="(item, index) in scroll" :slot-index="index" :el="'J_scroll' + index" :scroll-data="item.data || item" :default-value="item.defaultValue || 0"></scroll-slot>
+        <scroll-slot @change-solt="getData"  v-for="(item, index) in scroll" :slot-index="index" :el="'J_scroll' + index" :scroll-data="item.data || item" :default-value="item.defaultValue || 0"></scroll-slot>
       </div>
     </div>
   </div>
