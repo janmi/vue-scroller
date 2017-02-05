@@ -106,7 +106,7 @@
       that.init('.' + that.el, {
         onSelect (value) {
           that.selectedValue = value
-          that.$emit('changeSolt', that.slotIndex, that.selectedValue)
+          that.$emit('change-solt', that.slotIndex, that.selectedValue)
         }
       })
     },
@@ -170,10 +170,12 @@
     watch: {
       scrollData (val, oldVal) {
         const that = this.members
+        that.options.data = val
         that.__setDimensions(that.__component.clientHeight, that.__content.offsetHeight)
-        that.select(that.options.defaultValue, false)
+        setTimeout(() => { // 等待数据更新
+          that.select(null, false)
+        }, 10)
       }
     }
   }
-
 </script> 

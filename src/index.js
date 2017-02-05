@@ -1,4 +1,4 @@
 import Scroller from './scroller'
-module.exports = Scroller
+export default Scroller
 
 window.Scroller = Scroller

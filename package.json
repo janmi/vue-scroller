@@ -1,6 +1,6 @@
 {
   "name": "anima-vue-scroller",
-  "version": "1.1.1",
+  "version": "1.1.4",
   "description": "Vue scroller picke anima-vue-scroller",
   "author": "janmi <627943558@qq.com>",
   "private": false,
@@ -24,6 +24,7 @@
     "cooking-vue": "^0.5.2",
     "css-loader": "^0.24.0",
     "eslint-config-standard": "^6.2.1",
+    "eslint-loader": "^1.6.1",
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^2.0.1",
     "extract-text-webpack-plugin": "^1.0.0 || ^2.0.0-beta",
@@ -37,6 +38,7 @@
     "url-loader": "^0.5.7",
     "vue": "^2.1.8",
     "webpack": "^1.12.0 || ^2.1.0-beta",
-    "webpack-dev-server": "^1.14.0 || ^2.1.0-beta"
+    "webpack-dev-server": "^1.14.0 || ^2.1.0-beta",
+    "webpack-hud": "^0.1.1"
   }
 }
