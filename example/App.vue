@@ -5,14 +5,17 @@
     width: 1.333333rem;
     height: 1.333333rem;
     margin: 1.333333rem;
-  }
+
+  } 
 </style>
 <template>
   <div id="app">
   <span class="show" @click="show('scroller')">show address</span>
+  <span class="show" @click="show('fuck')">show address</span>
     <scroller @confirm="confirm" ref="scroller" @claer="claer" @change="changeValue" :scroll="scrollData"></scroller>
+    <scroller @confirm="confirm2" ref="fuck" @claer="claer"  :scroll="scrollData"></scroller>
     <p id="J_address" style="text-align: center;">{{addressStr}}</p>
-  </div>
+  </div> 
 </template>
 
 <script>
@@ -43,6 +46,15 @@ export default {
         }, {
           defaultValue: '',
           data: []
+        }
+      ],
+      scrollData2: [
+        {
+          defaultValue: '',
+          data: []
+        }, {
+          defaultValue: '',
+          data: []
         }, {
           defaultValue: '',
           data: []
@@ -54,18 +66,18 @@ export default {
   created () {
     this.readProvince(this.defaultValue[0])
     this.readCity(this.defaultValue[1])
-    this.readArea(this.defaultValue[1])
+    // this.readArea(this.defaultValue[1])
 
     this.scrollData[0].data = this.provinceData
     this.scrollData[0].defaultValue = this.defaultValue[0].value
     this.scrollData[1].data = this.cityData
     this.scrollData[1].defaultValue = this.defaultValue[1].value
-    this.scrollData[2].data = this.areaData
-    this.scrollData[2].defaultValue = this.defaultValue[2].value
+    // this.scrollData[2].data = this.areaData
+    // this.scrollData[2].defaultValue = this.defaultValue[2].value
 
     this.selectValue[0] = this.defaultValue[0]
     this.selectValue[1] = this.defaultValue[1]
-    this.selectValue[2] = this.defaultValue[2]
+    // this.selectValue[2] = this.defaultValue[2]
   },
   mounted () {
   },
@@ -136,13 +148,18 @@ export default {
       }
     },
     confirm (values) {
-      // console.log(values)
-      this.addressStr = values[0].name + '-' + values[1].name + '-' + values[2].name
+      console.log(values)
+      // this.addressStr = values[0].name + '-' + values[1].name + '-' + values[2].name
+    },
+    confirm2 (values) {
+      console.log(values)
+      // this.addressStr = values[0].name + '-' + values[1].name + '-' + values[2].name
     },
     claer (values) {
       console.log('x')
     },
     changeValue (values) {
+      console.log('fuck')
       const that = this
       if (values[0].value !== that.selectValue[0].value) {
         that.selectValue[0] = values[0]
@@ -156,8 +173,8 @@ export default {
         that.readCity(values[0])
         that.scrollData[1].data = that.cityData
         that.cityIndex = 0 // 切换市，归零
-        that.readArea()
-        that.scrollData[2].data = that.areaData
+        // that.readArea()
+        // that.scrollData[2].data = that.areaData
       }
 
       if (values[1] && values[1].value !== that.selectValue[1].value) {
@@ -169,15 +186,15 @@ export default {
             break
           }
         }
-        that.readArea({value: values[1].value, name: values[1].name})
-        that.scrollData[2].data = that.areaData
+        // that.readArea({value: values[1].value, name: values[1].name})
+        // that.scrollData[2].data = that.areaData
       }
     },
     open () {
       this.$refs['scroller'].open()
     },
     show (name) {
-      this.open()
+      this.$refs[name].open()
     }
   }
 }

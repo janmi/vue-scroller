@@ -1,6 +1,6 @@
 var cooking = require('cooking')
 cooking.set({
-  entry: './src/index.js',//./example/main.js 
+  entry: './src/index.js',// ./example/main.js
   dist: './dist',
   // template: './index.html',
   devServer: {
@@ -14,7 +14,7 @@ cooking.set({
     extractCSS: false,
     // 显示日志信息在页面上
     log: true,
-    port: 8080,
+    port: 3000,
     hostname: 'localhost',
     protocol: 'http:',
     // HTML5 history API

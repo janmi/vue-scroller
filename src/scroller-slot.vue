@@ -64,7 +64,7 @@
   }
 </style>
 <template>
-  <div class="scroller-component" :class="el" data-role="component">
+  <div class="scroller-component" data-role="component">
     <div class="scroller-mask" data-role="mask"></div>
     <div class="scroller-indicator" data-role="indicator"></div>
     <div class="scroller-content" data-role="content">
@@ -88,10 +88,10 @@
       defaultValue: {
         required: true
       },
-      el: {
-        type: String,
-        required: true
-      },
+      // el: {
+      //   type: String,
+      //   required: true
+      // },
       slotIndex: {
         type: Number
       }
@@ -103,7 +103,7 @@
     },
     mounted () {
       const that = this
-      that.init('.' + that.el, {
+      that.init(that.$el, {
         onSelect (value) {
           that.selectedValue = value
           that.$emit('change-solt', that.slotIndex, that.selectedValue)
@@ -134,7 +134,8 @@
             that.options[key] = options[key]
           }
         }
-        var component = that.__component = this.getElement(container)
+        // var component = that.__component = this.getElement(container)
+        var component = that.__component = container
         var content = that.__content = component.querySelector('[data-role=content]')
         var indicator = component.querySelector('[data-role=indicator]')
         that.__itemHeight = parseInt(this.getComputedStyle1(indicator, 'height'), 10)

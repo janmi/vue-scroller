@@ -3,7 +3,7 @@
     position: fixed;
     top: 0;
     left:0;
-    z-index: -1;
+    visibility: hidden;
     width: 100%;
     height: 100%;
   }
@@ -55,7 +55,7 @@
     }
   }
   .u-scroller.active{
-    z-index: 1000;
+    visibility: visible;
     .u-scroller-mark{
       visibility:visible;
       opacity:1;
@@ -74,7 +74,7 @@
         <span @click="confirm('confirm')" class="u-scroller-confirm">确认</span>
       </div>
       <div class="u-scroller-bd">
-        <scroll-slot @change-solt="getData"  v-for="(item, index) in scroll" :slot-index="index" :el="'J_scroll' + index" :scroll-data="item.data || item" :default-value="item.defaultValue || 0"></scroll-slot>
+        <scroll-slot @change-solt="getData"  v-for="(item, index) in scroll" :slot-index="index"  :scroll-data="item.data || item" :default-value="item.defaultValue || 0"></scroll-slot>
       </div>
     </div>
   </div>
