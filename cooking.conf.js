@@ -1,6 +1,9 @@
 var cooking = require('cooking')
 cooking.set({
-  entry: './src/index.js',// ./example/main.js
+  entry: {
+    'anima-vue-scroller': './src/index.js'
+  }, 
+  // entry: './example/main.js',
   dist: './dist',
   // template: './index.html',
   devServer: {
@@ -26,7 +29,7 @@ cooking.set({
     lazy: false
   },
   assetsPath: 'static',
-  moduleName: 'Scroller',
+  moduleName: 'scroller',
   chunk: false,
   format: 'umd',
   // Production

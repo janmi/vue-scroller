@@ -3,6 +3,7 @@
     position: fixed;
     top: 0;
     left:0;
+    z-index: 9999;
     visibility: hidden;
     width: 100%;
     height: 100%;
@@ -91,28 +92,9 @@
         selectedValues: []
       }
     },
-    methods: {
-      getData (index, value) {
-        const that = this
-        that.selectedValues[index] = value
-        this.$emit('change', that.selectedValues)
-      },
-      open () {
-        const that = this
-        that.isShow = true
-      },
-      close (event) {
-        this.isShow = false
-        this.$emit(event)
-      },
-      confirm (event) {
-        this.$emit(event, this.selectedValues)
-        this.isShow = false
-      }
-    },
     mounted () {
       const that = this
-      that.scroll.forEach(item => {
+      that.scroll.forEach((item) => {
         var defaultValue = item.defaultValue || 0
         if (typeof item === 'object') {
           for (let i = 0; i < item.data.length; i++) {
@@ -128,6 +110,27 @@
           }
         }
       })
+    },
+    methods: {
+      getData (index, value) {
+        // console.log(value)
+        const that = this
+        that.selectedValues[index] = value
+        // console.log(that.selectedValues)
+        this.$emit('change', that.selectedValues)
+      },
+      open () {
+        const that = this
+        that.isShow = true
+      },
+      close (event) {
+        this.isShow = false
+        this.$emit(event)
+      },
+      confirm (event) {
+        this.$emit(event, this.selectedValues)
+        this.isShow = false
+      }
     }
   }
 

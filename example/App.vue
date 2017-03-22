@@ -69,7 +69,7 @@ export default {
     // this.readArea(this.defaultValue[1])
 
     this.scrollData[0].data = this.provinceData
-    this.scrollData[0].defaultValue = this.defaultValue[0].value
+    this.scrollData[0].defaultValue = 0
     this.scrollData[1].data = this.cityData
     this.scrollData[1].defaultValue = this.defaultValue[1].value
     // this.scrollData[2].data = this.areaData

@@ -1,10 +1,11 @@
 {
   "name": "anima-vue-scroller",
-  "version": "1.1.5",
+  "version": "1.1.9",
   "description": "Vue scroller picke anima-vue-scroller",
   "author": "janmi <627943558@qq.com>",
   "private": false,
-  "main": "dist/app.js",
+  "main": "dist/anima-vue-scroller.js",
+  "style": "dist/anima-vue-scroller.css",
   "repository": {
     "type": "git",
     "url": "https://github.com/janmi/vue-scroller"

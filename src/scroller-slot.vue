@@ -69,8 +69,8 @@
     <div class="scroller-indicator" data-role="indicator"></div>
     <div class="scroller-content" data-role="content">
       <template  v-for="item in scrollData">
-        <p class="scroller-item" :data-value="item.value || item" :data-name="item.name || item">
-          {{item.name || item}}
+        <p class="scroller-item" :data-value="item.value" :data-name="item.name">
+          {{item.name}}
         </p>
       </template>
     </div>
